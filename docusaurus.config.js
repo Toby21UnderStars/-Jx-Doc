@@ -58,7 +58,9 @@ const config = {
     ({
       navbar: {
         title: 'Jx Doc',
-        items: [],
+        items: [
+          
+        ],
       },
       footer: {
         style: 'dark',
