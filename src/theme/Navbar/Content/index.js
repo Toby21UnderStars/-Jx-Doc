@@ -58,7 +58,6 @@ export default function NavbarContent() {
   const mobileSidebar = useNavbarMobileSidebar();
   const items = useNavbarItems();
   const { items: docsSidebar } = useDocsSidebar();
-  console.log(docsSidebar);
   const leftItems = docsSidebar.map((sidebar) => {
     return {
       to: sidebar.href,
