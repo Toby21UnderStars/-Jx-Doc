@@ -38,6 +38,14 @@ ${JSON.stringify(item, null, 2)}`,
     </>
   );
 }
+
+const getActiveBase = (sidebar) => {
+  if (sidebar.type === "category") {
+    return getActiveBase(sidebar.items[0]);
+  }
+  return sidebar.href.split("/")[1];
+};
+
 function NavbarContentLayout({ left, right }) {
   return (
     <div className="navbar__inner">
@@ -55,6 +63,7 @@ export default function NavbarContent() {
     return {
       to: sidebar.href,
       label: sidebar.label,
+      activeBasePath: getActiveBase(sidebar),
     };
   });
   const rightItems = [];
